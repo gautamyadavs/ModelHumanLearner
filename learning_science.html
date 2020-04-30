@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Use this website to figure out what learning science research you might wanna consider before you start learning engineering:</h2>
+
+<ol>
+  <li>
+    <input type="checkbox" id="instruction"  onclick="instruction()"><label for="instruction">Instructions/Formative Assessment</label>
+    <input type="checkbox" id="summative"  onclick="summative()"><label for="summative">Summative Assessment</label>
+    <br>
+    <div id="instructiontext" style="display:none">
+    <br>Things you might wanna consider:<br>
+    ICAP framework - Interactive > Constructive > Active > Passive. Read more about when and how to implement <a href="#">here</a><br>
+    </div>
+    <div id="summativetext" style="display:none">
+    <br>Things you might wanna consider:<br>
+    Exam Expectation Principle - Students benefit more from learning activities when they expect a final exam that will include additional information than when they do not expect a final exam. Read more about when and how to implement <a href="#">here</a><br>
+    </div>
+    <br>
+  </li>
+  <li>
+    <input type="checkbox" id="semester"  onclick="semester()"><label for="semester">Semester long intervention</label>
+    <input type="checkbox" id="fewtime"  onclick="fewtime()"><label for="fewtime">Few times intervention</label>
+    <input type="checkbox" id="onetime"  onclick="onetime()"><label for="onetime">One time intervention</label>
+    <br>
+    <div id="semestertext" style="display:none">
+    <br>Things you might wanna consider:<br>
+    Spacing Principle - . Read more about when and how to implement <a href="#">here</a><br>
+    Testing Principle - . Read more about when and how to implement <a href="#">here</a><br>
+    </div>
+    <div id="fewtimetext" style="display:none">
+    <br>Things you might wanna consider:<br>
+    Interleaving Principle - . Read more about when and how to implement <a href="#">here</a><br>
+    </div>
+    <div id="onetimetext" style="display:none">
+    <br>Things you might wanna consider:<br>
+    Interleaving Principle - . Read more about when and how to implement <a href="#">here</a><br>
+    </div>
+    <br>
+  </li>
+  <li>
+    <input type="checkbox" id="elementary"  onclick="elementary()"><label for="elementary">Elementary School</label>
+    <input type="checkbox" id="middle"  onclick="middle()"><label for="middle">Middle School</label>
+    <input type="checkbox" id="high"  onclick="high()"><label for="high">High School</label>
+    <input type="checkbox" id="university"  onclick="university()"><label for="university">University</label>
+    <input type="checkbox" id="adult"  onclick="adult()"><label for="adult">Adult Training</label>
+    <br>
+    <div id="elementarytext" style="display:none">
+    <br>Things you might wanna consider for elementary school learners:<br>
+    </div>
+    <div id="middletext" style="display:none">
+    <br>Things you might wanna consider for middle school learners:<br>
+    </div>
+    <div id="hightext" style="display:none">
+    <br>Things you might wanna consider for high school learners:<br>
+    </div>
+    <div id="universitytext" style="display:none">
+    <br>Things you might wanna consider for university learners:<br>
+    </div>
+    <div id="adulttext" style="display:none">
+    <br>Things you might wanna consider for adult learners:<br>
+    </div>
+    <br>
+  </li>
+  <li>
+    <select id="domain">
+      <option value="">Select Domain:</option>
+      <option value="algebra">Algebra</option>
+      <option value="geometry">Geometry</option>
+      <option value="languages">Languages</option>
+      <option value="chemistry">Chemistry</option>
+      <option value="phhysics">Physics</option>
+    </select>
+    <br>
+  </li>
+</ol>
+<img src="feedback.jpg" alt="Always give feedback!" style="width:200px;height:200px;"><br>
+Feedback Principle - Students benefit from feedback on their performance in a learning task. Read more about when and how to implement <a href="#">here</a>
+
+<script>
+function instruction() {
+  var checkBox = document.getElementById("instruction");
+  document.getElementById("summative").checked = false;
+  if (checkBox.checked == true){
+    document.getElementById("instructiontext").style.display = "block";
+    document.getElementById("summativetext").style.display = "none";
+  } else {
+     document.getElementById("instructiontext").style.display = "none";
+  }
+}
+function summative() {
+  var checkBox = document.getElementById("summative");
+  document.getElementById("instruction").checked = false;
+  if (checkBox.checked == true){
+    document.getElementById("summativetext").style.display = "block";
+    document.getElementById("instructiontext").style.display = "none";
+  } else {
+     document.getElementById("summativetext").style.display = "none";
+  }
+}
+function semester() {
+  var checkBox = document.getElementById("semester");
+  document.getElementById("fewtime").checked = false;
+  document.getElementById("onetime").checked = false;
+  if (checkBox.checked == true){
+    document.getElementById("semestertext").style.display = "block";
+    document.getElementById("fewtimetext").style.display = "none";
+    document.getElementById("onetimetext").style.display = "none";
+  } else {
+     document.getElementById("semestertext").style.display = "none";
+  }
+}
+function fewtime() {
+  var checkBox = document.getElementById("fewtime");
+  document.getElementById("semester").checked = false;
+  document.getElementById("onetime").checked = false;
+  if (checkBox.checked == true){
+    document.getElementById("fewtimetext").style.display = "block";
+    document.getElementById("semestertext").style.display = "none";
+    document.getElementById("onetimetext").style.display = "none";
+  } else {
+     document.getElementById("fewtimetext").style.display = "none";
+  }
+}
+function onetime() {
+  var checkBox = document.getElementById("onetime");
+  document.getElementById("semester").checked = false;
+  document.getElementById("fewtime").checked = false;
+  if (checkBox.checked == true){
+    document.getElementById("onetimetext").style.display = "block";
+    document.getElementById("semestertext").style.display = "none";
+    document.getElementById("fewtimetext").style.display = "none";
+  } else {
+     document.getElementById("onetimetext").style.display = "none";
+  }
+}
+function elementary() {
+  var checkBox = document.getElementById("elementary");
+  document.getElementById("middle").checked = false;
+  document.getElementById("high").checked = false;
+  document.getElementById("university").checked = false;
+  document.getElementById("adult").checked = false;
+  if (checkBox.checked == true){
+    document.getElementById("elementarytext").style.display = "block";
+    document.getElementById("middletext").style.display = "none";
+    document.getElementById("hightext").style.display = "none";
+    document.getElementById("universitytext").style.display = "none";
+    document.getElementById("adulttext").style.display = "none";
+  } else {
+     document.getElementById("elementarytext").style.display = "none";
+  }
+}
+function middle() {
+  var checkBox = document.getElementById("middle");
+  document.getElementById("elementary").checked = false;
+  document.getElementById("high").checked = false;
+  document.getElementById("university").checked = false;
+  document.getElementById("adult").checked = false;
+  if (checkBox.checked == true){
+    document.getElementById("middletext").style.display = "block";
+    document.getElementById("elementarytext").style.display = "none";
+    document.getElementById("hightext").style.display = "none";
+    document.getElementById("universitytext").style.display = "none";
+    document.getElementById("adulttext").style.display = "none";
+  } else {
+     document.getElementById("middletext").style.display = "none";
+  }
+}
+function high() {
+  var checkBox = document.getElementById("high");
+  document.getElementById("elementary").checked = false;
+  document.getElementById("middle").checked = false;
+  document.getElementById("university").checked = false;
+  document.getElementById("adult").checked = false;
+  if (checkBox.checked == true){
+    document.getElementById("hightext").style.display = "block";
+    document.getElementById("elementarytext").style.display = "none";
+    document.getElementById("middletext").style.display = "none";
+    document.getElementById("universitytext").style.display = "none";
+    document.getElementById("adulttext").style.display = "none";
+  } else {
+     document.getElementById("hightext").style.display = "none";
+  }
+}
+function university() {
+  var checkBox = document.getElementById("university");
+  document.getElementById("elementary").checked = false;
+  document.getElementById("middle").checked = false;
+  document.getElementById("high").checked = false;
+  document.getElementById("adult").checked = false;
+  if (checkBox.checked == true){
+    document.getElementById("universitytext").style.display = "block";
+    document.getElementById("elementarytext").style.display = "none";
+    document.getElementById("middletext").style.display = "none";
+    document.getElementById("hightext").style.display = "none";
+    document.getElementById("adulttext").style.display = "none";
+  } else {
+     document.getElementById("universitytext").style.display = "none";
+  }
+}
+function adult() {
+  var checkBox = document.getElementById("adult");
+  document.getElementById("elementary").checked = false;
+  document.getElementById("middle").checked = false;
+  document.getElementById("high").checked = false;
+  document.getElementById("university").checked = false;
+  if (checkBox.checked == true){
+    document.getElementById("adulttext").style.display = "block";
+    document.getElementById("elementarytext").style.display = "none";
+    document.getElementById("middletext").style.display = "none";
+    document.getElementById("hightext").style.display = "none";
+    document.getElementById("universitytext").style.display = "none";
+  } else {
+     document.getElementById("adulttext").style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
