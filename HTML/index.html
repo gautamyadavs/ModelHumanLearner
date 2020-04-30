@@ -65,19 +65,36 @@
   </li>
   <li>
     <select id="domain">
-      <option value="">Select Domain:</option>
+      <option value="">Select Domain: </option>
       <option value="algebra">Algebra</option>
       <option value="geometry">Geometry</option>
       <option value="languages">Languages</option>
       <option value="chemistry">Chemistry</option>
-      <option value="phhysics">Physics</option>
+      <option value="physics">Physics</option>
     </select>
+    <br>
+    <div id="algebra" class="domains" style="display:none">
+    <br>Things you might wanna consider for Algebra:<br>
+    </div>
+    <div id="geometry" class="domains" style="display:none">
+    <br>Things you might wanna consider for Geometry:<br>
+    </div>
+    <div id="languages" class="domains" style="display:none">
+    <br>Things you might wanna consider for Languages:<br>
+    </div>
+    <div id="chemistry" class="domains" style="display:none">
+    <br>Things you might wanna consider for Chemistry:<br>
+    </div>
+    <div id="physics" class="domains" style="display:none">
+    <br>Things you might wanna consider for Physics:<br>
+    </div>
     <br>
   </li>
 </ol>
 <img src="feedback.jpg" alt="Always give feedback!" style="width:200px;height:200px;"><br>
 Feedback Principle - Students benefit from feedback on their performance in a learning task. Read more about when and how to implement <a href="#">here</a>
 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 <script>
 function instruction() {
   var checkBox = document.getElementById("instruction");
@@ -215,6 +232,12 @@ function adult() {
      document.getElementById("adulttext").style.display = "none";
   }
 }
+$(function() {
+        $('#domain').change(function(){
+            $('.domains').hide();
+            $('#' + $(this).val()).show();
+        });
+    });
 </script>
 
 </body>
